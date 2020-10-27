@@ -19,10 +19,19 @@
         </ul>
     </nav>
     <div class="left-aside">
-        <details>
-            <summary>Tabela info</summary>
-            <p>Tabela na stronie jest widokiem połączenie 3 tabelek lib_autor, lib_tytul, lib_autor_tytul</p>
-        </details>
+        <div>
+            <details>
+                <summary>Tabela info</summary>
+                <p>Tabela na stronie jest widokiem połączenie 3 tabelek lib_autor, lib_tytul, lib_autor_tytul</p>
+            </details>
+        </div>
+        <div class="ins1">
+            <form action="insert.php" method="POST">
+            <div><input type="text" name="nazwisko" placeholder="nazwisko autora"></div>
+            <div><input type="text" name="tytul" placeholder="tytul"></div>
+            <div><input type="submit" value="Send"></div>
+            </form>
+        </div>
     </div>
     <main>
     <?php

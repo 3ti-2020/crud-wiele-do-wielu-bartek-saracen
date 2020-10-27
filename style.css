@@ -70,13 +70,23 @@ nav ul li a:hover {
     grid-area: c;
     border: 1px solid white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    
 }
 
 .left-aside details {
-    width: 80%;
+    width: 300px;
+    height: auto;
     background: whitesmoke;
+}
+
+.ins1 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
 }
 
 main {
