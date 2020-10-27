@@ -8,13 +8,28 @@
 </head>
 <body>
     <div class="container">
-    <header></header>
+    <header>
+        <h1>Książki</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+        </ul>
+    </nav>
+    <div class="left-aside">
+        <details>
+            <summary>Tabela info</summary>
+            <p>Tabela na stronie jest widokiem połączenie 3 tabelek lib_autor, lib_tytul, lib_autor_tytul</p>
+        </details>
+    </div>
     <main>
     <?php
     $conn=new mysqli('127.0.0.1','root','','bartek');
     $conn->set_charset('utf8');
     $result=$conn->query("SELECT * FROM ksiazki");
-    echo("<table><tr>
+    echo("<table class='tab'><tr>
         <th>autor</th>
         <th>tytul</th>
     </tr>");
