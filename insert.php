@@ -1,5 +1,5 @@
 <?php
-$conn=new mysqli('127.0.0.1','root','','bartek');
+$conn=new mysqli('remotemysql.com','PDsWaSTZR9','6Xi9F82obS','PDsWaSTZR9');
 $autor = $_POST['nazwisko'];
 $tytul = $_POST['tytul'];
 $sql1 = "INSERT INTO `lib_autor`(`id_autor`, `autor`) VALUES (NULL, '$autor')";
