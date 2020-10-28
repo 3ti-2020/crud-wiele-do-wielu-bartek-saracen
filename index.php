@@ -37,7 +37,7 @@
     <?php
     require('connect.php');
     $conn->set_charset('utf8');
-    $result=$conn->query("SELECT id_autor_tytul,autor,tytul FROM lib_tytul,lib_autor_tytul,lib_autor where lib_autor.id_autor=lib_autor_tytul.id_autor_tytul and lib_tytul.id_tytul=lib_autor_tytul.id_tytul;");
+    $result=$conn->query("SELECT * FROM Ksiazki");
     echo("<table class='tab'><tr>
         <th>id</th>
         <th>autor</th>

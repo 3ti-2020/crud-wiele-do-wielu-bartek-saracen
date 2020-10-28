@@ -1,3 +1,3 @@
 <?php
-$conn=new mysqli('remotemysql.com','PDsWaSTZR9','6Xi9F82obS','PDsWaSTZR9');
+$conn=new mysqli('ALTER TABLE lib_autor ADD PRIMARY KEY(id_autor)','sql7373165','BZKyCC7jlB','sql7373165');
 ?>
