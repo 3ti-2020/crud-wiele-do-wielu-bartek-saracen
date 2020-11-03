@@ -15,5 +15,5 @@ if ($conn->query($sql2) === TRUE) {
 $conn->query($sql1);
 $conn->query($sql2);
 mysqli_close($conn);
-header('Location: http://bartek-saracen-crud.herokuapp.com/');
+//header('Location: http://bartek-saracen-crud.herokuapp.com/');
 ?>
