@@ -92,8 +92,14 @@ nav ul li a:hover {
 main {
     grid-area: d;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid white;
+}
+
+.tab {
+    margin: 1rem 0;
 }
 
 footer {
