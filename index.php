@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bartosz Saracen gr 2</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
     <div class="container">
@@ -34,6 +35,32 @@
         </div>
     </div>
     <main>
+        <div class="card">
+            <a class="info">i</a>
+            <a class="picture" href="#"><div class="img"></div></a>
+            <div class="square">
+                <div class="a1">
+                    <div class="follow">
+                        <div class="followers">
+                            <span class="spn">1000</span>
+                            <a class="btn">FOLLOW</a>
+                        </div>
+                    </div>
+                    <h3>Patrick Wood</h3>
+                </div>
+                <div class="a2">
+                    <p>CEO / Co-Founder</p>
+                </div>
+                <div class="a3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti corporis animi aperiam laboriosam magnam qui corrupti nobis voluptates dicta. Nam libero laudantium consectetur dolorem asperiores blanditiis quo maiores vitae.</p>
+                </div>
+                <div class="a4">
+                    <a class="icons icon1" href="#"><img src="https://www.flaticon.com/svg/static/icons/svg/145/145808.svg" alt="Pinterest"></a>
+                    <a class="icons icon2" href="#"><img src="https://www.flaticon.com/svg/static/icons/svg/145/145812.svg" alt="Twitter"></a>
+                    <a class="icons icon3" href="#"><img src="https://www.flaticon.com/svg/static/icons/svg/145/145801.svg" alt="Dribbble"></a>
+                </div>
+            </div>
+        </div>
     <?php
     require('connect.php');
     $conn->set_charset('utf8');
@@ -58,5 +85,6 @@ HTML;
     </main>
     <footer></footer>
     </div>
+    <script src="src.js"></script>
 </body>
 </html>

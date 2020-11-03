@@ -1,0 +1,153 @@
+.card{
+    width: 500px;
+    height: 600px;
+    background: rgb(216, 213, 213);
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: rgb(143, 137, 137);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.info:hover {
+    transition: 1s;
+    filter: brightness(70%);
+    background: rgb(143, 137, 137);
+}
+
+.picture {
+    margin-top: 35px;
+    z-index: 2;
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img {
+    width: 180px;
+    height: 180px;
+    background-image: url(https://s3.scoopwhoop.com/anj/st_anger/820657210.jpg);
+    background-size: 600px;
+    background-position: top;
+    background-position-x: 54%;
+    border-radius: 50%;
+}
+
+.square {
+    position: absolute;
+    margin-top: 125px;
+    width: 450px;
+    height: 450px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.a1 {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.follow {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.followers {
+    transform: translateX(15px) translateY(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn{
+    background: yellow;
+    border-radius: 10px;
+    width: 110px;
+    height: 30px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.a2 {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a2 p {
+    font-weight: bold;
+    color: gray;
+}
+
+.a3 {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a3 p {
+    text-align: center;
+    padding: 3rem;
+}
+
+.a4 {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.icons {
+    border-radius: 50%;
+    margin: 5px 10px;
+    width: 75px;
+    height: 75px;
+}
+
+.icon1:hover {
+    transition: 1s;
+    box-shadow: 0 4px 8px 0 rgba(235, 34, 34, 0.295), 0 6px 20px 0 rgba(235, 34, 34, 0.295);
+}
+
+.icon2:hover {
+    transition: 1s;
+    box-shadow: 0 4px 8px 0 rgba(120, 189, 245, 0.356), 0 6px 20px 0 rgba(120, 189, 245, 0.356);
+}
+
+.icon3:hover {
+    transition: 1s;
+    box-shadow: 0 4px 8px 0 rgba(245, 113, 223, 0.295), 0 6px 20px 0 rgba(245, 113, 223, 0.295);
+}
