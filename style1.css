@@ -1,152 +1,166 @@
-.card{
+.card {
+    margin: 1rem;
     width: 500px;
+    min-width: 280px;
     height: 600px;
+    max-height: 800px;
+    min-height: 500px;
+    border-radius: 15px;
     background: rgb(216, 213, 213);
-    border-radius: 10px;
-    display: flex;
     position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    justify-content: center;
-    margin: 1rem 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 2px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-.info {
-    top: 20px;
-    right: 20px;
+.forimg {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    background: rgb(143, 137, 137);
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    cursor: pointer;
-}
-
-.info:hover {
-    transition: 1s;
-    filter: brightness(70%);
-    background: rgb(143, 137, 137);
-}
-
-.picture {
-    margin-top: 35px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
 }
-
-.img {
-    width: 180px;
-    height: 180px;
-    background-image: url(https://s3.scoopwhoop.com/anj/st_anger/820657210.jpg);
-    background-size: 600px;
-    background-position: top;
-    background-position-x: 54%;
+.image {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    transition: 0.2s;
 }
-
-.square {
+.bg-for-text {
     position: absolute;
-    margin-top: 125px;
-    width: 450px;
-    height: 450px;
-    background: white;
+    width: 92%;
+    height: 70%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
-
-.a1 {
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.follow {
-    height: 100%;
+.item {
     width: 100%;
-    border-radius: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    font-family: sans-serif;
+    text-align: center;
 }
-
-.followers {
-    transform: translateX(15px) translateY(10px);
+.item1 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 20%;
+}
+.items {
+    width: 50%;
+    height: 100%;
+}
+.items1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.fol {
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.btn{
-    background: yellow;
-    border-radius: 10px;
-    width: 110px;
-    height: 30px;
-    border: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
+}
+.followers {
+    font-weight: 600;
+}
+.follow {
     cursor: pointer;
+    border-radius: 5px;
+    background: yellow;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    font-weight: 600;
+    font-size: 13px;
 }
-
-.a2 {
-    height: 40px;
+.follow:hover {
+    transition: 0.2s;
+    background: tomato;
+}
+.item2 {
+    display: flex;
+    flex-wrap: wrap;
+    height: 20%;
+}
+.n {
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.a2 p {
-    font-weight: bold;
+.n2 {
     color: gray;
 }
-
-.a3 {
-    height: 130px;
+.item3 {
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
 }
-
-.a3 p {
-    text-align: center;
-    padding: 3rem;
+.item3 p{
+    width: 80%;
 }
-
-.a4 {
-    height: 120px;
+.item4 {
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-
 .icons {
-    border-radius: 50%;
-    margin: 5px 10px;
     width: 75px;
     height: 75px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: 0.2s;
 }
 
 .icon1:hover {
     transition: 1s;
-    box-shadow: 0 4px 8px 0 rgba(235, 34, 34, 0.295), 0 6px 20px 0 rgba(235, 34, 34, 0.295);
+    box-shadow: 0 4px 8px 0 rgba(235, 34, 34, 0.395), 0 6px 20px 0 rgba(235, 34, 34, 0.395);
 }
 
 .icon2:hover {
     transition: 1s;
-    box-shadow: 0 4px 8px 0 rgba(120, 189, 245, 0.356), 0 6px 20px 0 rgba(120, 189, 245, 0.356);
+    box-shadow: 0 4px 8px 0 rgba(120, 189, 245, 0.456), 0 6px 20px 0 rgba(120, 189, 245, 0.456);
 }
-
 .icon3:hover {
     transition: 1s;
-    box-shadow: 0 4px 8px 0 rgba(245, 113, 223, 0.295), 0 6px 20px 0 rgba(245, 113, 223, 0.295);
+    box-shadow: 0 4px 8px 0 rgba(245, 113, 223, 0.495), 0 6px 20px 0 rgba(245, 113, 223, 0.495);
+}
+@media only screen and (max-width: 400px){
+    .forimg {
+        top: 13%;
+    }
+    .image,.forimg {
+        width: 130px;
+        height: 130px;
+    }
+    .icons {
+        width: 63px;
+        height: 63px;
+        margin-top: 10px;
+    }
+    .follow {
+        width: 60px;
+    }
+}
+@media only screen and (max-width: 358px) {
+    .card {
+        height: 700px;
+        transition: 0.2s;
+    }
 }
