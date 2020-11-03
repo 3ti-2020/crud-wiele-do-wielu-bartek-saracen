@@ -22,7 +22,7 @@
         <div>
             <details>
                 <summary>Tabela info</summary>
-                <p>Tabela na stronie jest widokiem połączenie 3 tabelek lib_autor, lib_tytul, lib_autor_tytul</p>
+                <p>Tabela na stronie jest połączeniem 3 tabel lib_autor, lib_tytul oraz lib_autor_tytul</p>
             </details>
         </div>
         <div class="ins1">
@@ -37,7 +37,7 @@
     <?php
     require('connect.php');
     $conn->set_charset('utf8');
-    $result=$conn->query("SELECT * FROM Ksiazki");
+    $result=$conn->query("SELECT id_autor_tytul,autor,tytul FROM lib_autor_tytul,lib_autor,lib_tytul WHERE lib_tytul.id_tytul=lib_autor_tytul.id_tytul and lib_autor.id_autor=lib_autor_tytul.id_autor");
     echo("<table class='tab'><tr>
         <th>id</th>
         <th>autor</th>
