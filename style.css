@@ -92,6 +92,7 @@ nav ul li a:hover {
 main {
     grid-area: d;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
