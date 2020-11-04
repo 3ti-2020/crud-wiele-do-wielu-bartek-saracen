@@ -20,7 +20,7 @@
     </nav>
     <div class="left-aside">
         <div>
-            <details>
+            <details style="cursor: pointer;">
                 <summary>Tabela info</summary>
                 <p>Tabela na stronie jest połączeniem 3 tabel lib_autor, lib_tytul oraz lib_autor_tytul</p>
             </details>
@@ -30,7 +30,7 @@
             <div><input type="text" name="imie" placeholder="imie autora"></div>
             <div><input type="text" name="nazwisko" placeholder="nazwisko autora"></div>
             <div><input type="text" name="tytul" placeholder="tytul"></div>
-            <div><input type="submit" value="Send"></div>
+            <div><input style="cursor: pointer;" type="submit" value="Send"></div>
             </form>
         </div>
     </div>
