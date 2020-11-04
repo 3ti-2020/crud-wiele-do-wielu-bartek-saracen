@@ -38,7 +38,7 @@
     <?php
     require('connect.php');
     $conn->set_charset('utf8');
-    $result=$conn->query("SELECT id_autor_tytul,imie,nazwisko,tytul FROM lib_autor_tytul,lib_autor,lib_tytul WHERE lib_tytul.id_tytul=lib_autor_tytul.id_tytul and lib_autor.id_autor=lib_autor_tytul.id_autor");
+    $result=$conn->query("SELECT id_autor_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor_tytul,lib_autor,lib_tytul WHERE lib_tytul.id_tytul=lib_autor_tytul.id_tytul and lib_autor.id_autor=lib_autor_tytul.id_autor");
     echo("<table class='tab'><tr>
         <th>id</th>
         <th>imie</th>
@@ -49,8 +49,8 @@
         $str = <<<HTML
         <tr>
             <td>$row[id_autor_tytul]</td>
-            <td>$row[imie]</td>
-            <td>$row[nazwisko]</td>
+            <td>$row[imie_autor]</td>
+            <td>$row[nazwisko_autor]</td>
             <td>$row[tytul]</td>
         </tr>
 HTML;
