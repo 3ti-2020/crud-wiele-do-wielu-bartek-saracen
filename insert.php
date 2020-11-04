@@ -1,8 +1,9 @@
 <?php
 require('connect.php');
-$autor = $_POST['nazwisko'];
+$imie = $_POST['imie'];
+$nazwisko = $_POST['nazwisko'];
 $tytul = $_POST['tytul'];
-$sql1 = "INSERT INTO `lib_autor`(`id_autor`, `autor`) VALUES (NULL, '$autor')";
+$sql1 = "INSERT INTO `lib_autor`(`id_autor`, `imie_autor`, `nazwisko_autor`) VALUES (NULL, '$imie','$nazwisko')";
 if ($conn->query($sql1) === TRUE) {
     $last_id1 = $conn->insert_id;
   }
