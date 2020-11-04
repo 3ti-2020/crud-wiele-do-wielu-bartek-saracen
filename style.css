@@ -6,13 +6,13 @@
 
 .container {
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-image: url(images/background.png);
     background-size: cover;
     background-position: center;
     display: grid;
     grid-template-columns: 2.5fr 6fr;
-    grid-template-rows: 50px 60px auto 50px;
+    grid-template-rows: 50px 60px 1fr 50px;
     grid-template-areas: 
     "a a"
     "b b"
@@ -93,8 +93,7 @@ nav ul li a:hover {
 main {
     grid-area: d;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 1px solid white;
 }
@@ -127,13 +126,13 @@ footer {
 @media only screen and (max-width: 1150px) {
     .container {
         width: 100%;
-        height: auto;
+        height: 100vh;
         background-image: url(images/background.png);
         background-size: cover;
         background-position: center;
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 50px 60px auto auto 50px;
+        grid-template-rows: 50px 60px 0.5fr 0.5fr 50px;
         grid-template-areas: 
         "a"
         "b"
