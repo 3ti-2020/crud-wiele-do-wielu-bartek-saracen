@@ -9,7 +9,7 @@
 <body>
     <div class="container">
     <header>
-        <h1>Książki</h1>
+        <h1>Biblioteka</h1>
     </header>
     <nav>
         <ul>

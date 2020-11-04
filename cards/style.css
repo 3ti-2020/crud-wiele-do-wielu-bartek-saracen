@@ -93,7 +93,7 @@ header a:hover {
     align-items: center;
     justify-content: flex-start;
 }
-.fol,.fol1 {
+.fol {
     width: 50%;
     height: 100%;
     display: flex;
@@ -101,10 +101,10 @@ header a:hover {
     justify-content: center;
     align-items: center;
 }
-.followers,.card1 .followers1 {
+.followers, .followers1 {
     font-weight: 600;
 }
-.follow,.card1 .follow1 {
+.follow, .follow1 {
     cursor: pointer;
     border-radius: 5px;
     background: yellow;
@@ -186,12 +186,12 @@ header a:hover {
         height: 63px;
         margin-top: 10px;
     }
-    .follow {
+    .follow,.follow1 {
         width: 60px;
     }
 }
 @media only screen and (max-width: 358px) {
-    .card {
+    .card,.card1 {
         height: 700px;
         transition: 0.2s;
     }
