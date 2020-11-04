@@ -67,6 +67,12 @@ nav ul li a:hover {
     filter: brightness(80%);
 }
 
+.github {
+    background: white;
+    width: 70px;
+    height: 40px;
+}
+
 .left-aside {
     grid-area: c;
     border: 1px solid white;

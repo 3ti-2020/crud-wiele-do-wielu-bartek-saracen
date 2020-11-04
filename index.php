@@ -13,7 +13,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">link</a></li>
+            <li><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-bartek-saracen"><img class="github" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111425.svg" alt="github"></a></li>
             <li><a href="cards/index.html">Cards</a></li>
             <li><a href="#">link</a></li>
         </ul>
