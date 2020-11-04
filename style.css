@@ -131,7 +131,7 @@ footer {
         background-size: cover;
         background-position: center;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         grid-template-rows: 50px 60px 0.5fr 0.5fr 50px;
         grid-template-areas: 
         "a"
