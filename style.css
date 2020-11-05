@@ -148,3 +148,95 @@ footer {
         ;
     }
 }
+
+/*<-------------------- logowanie -------------------->*/
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba( 0, 0, 0, 0.7);
+    display: none;
+}
+.modal .log {
+    margin: auto;
+    height: 40%;
+    min-width: 200px;
+    width: 500px;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+}
+.close {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 30px;
+    font-weight: 900;
+    transform: rotate(45deg);
+}
+.log .a {
+    width: 100%;
+}
+.log .a1 {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background: cornflowerblue;
+    transition: 0.3s;
+}
+.log .a2 {
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.action {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.action .i {
+    border: 1px solid rgb(62, 255, 71);
+    width: 100%;
+    height: 30%;
+}
+.log .a3 {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.button {
+    margin: 5px;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+@media only screen and (max-width: 600px) {
+    .log {
+        width: 90%;
+    }
+    .circle {
+        width: 105px;
+        height: 105px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .circle {
+        width: 95px;
+        height: 95px;
+    }
+}

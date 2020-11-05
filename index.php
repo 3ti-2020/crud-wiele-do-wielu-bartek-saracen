@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="modal">
+        <div class="log">
+            <a class="close">+</a>
+            <div class="a1 a">
+                <div class="circle"></div>
+            </div>
+            <div class="a2 a">
+                <div class="action">
+                    <input type="text" class="login i" placeholder="login">
+                    <input type="text" class="password i" placeholder="password">
+                </div>
+            </div>
+            <div class="a3 a">
+                <input class="button" type="button" value="Zaloguj">
+            </div>
+        </div>
+    </div>
     <div class="container">
     <header>
         <h1>Biblioteka</h1>
@@ -15,7 +32,7 @@
         <ul>
             <li><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-bartek-saracen" target="_blank"><img class="github" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111425.svg" alt="github"></a></li>
             <li><a href="cards/index.html">Cards</a></li>
-            <li><a href="#">link</a></li>
+            <li><a href="#" id="signin">sign in</a></li>
         </ul>
     </nav>
     <div class="left-aside">
@@ -61,5 +78,6 @@ HTML;
     </main>
     <footer></footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
