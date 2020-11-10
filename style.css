@@ -51,7 +51,7 @@ nav ul li {
     display: flex;
 }
 
-nav ul li a {
+nav ul li a,.login {
     color: white;
     width: 70px;
     height: 40px;
@@ -60,9 +60,10 @@ nav ul li a {
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,.login:hover {
     transition: 0.8s;
     filter: brightness(80%);
 }
@@ -175,11 +176,9 @@ footer {
     font-weight: 900;
     transform: rotate(45deg);
 }
-.log .a {
-    width: 100%;
-}
 .log .a1 {
     height: 40%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,36 +191,41 @@ footer {
     transition: 0.3s;
 }
 .log .a2 {
-    height: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.action {
-    width: 60%;
     height: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
 }
-.action .i {
-    border: 1px solid rgb(62, 255, 71);
+
+.log .a2 .e1 {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.log .a2 .e1 .i {
     width: 100%;
-    height: 30%;
-}
-.log .a3 {
-    height: 25%;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+}
+
+.ii {
+    margin-bottom: 20px;
+}
+.in {
+    border-radius: 5px;
+    border: 2px solid rgb(0, 223, 0);
+    padding: 0.5rem;
 }
 .button {
-    margin: 5px;
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid gray;
+    width: 70px;
+    height: 40px;
 }
 
 @media only screen and (max-width: 600px) {

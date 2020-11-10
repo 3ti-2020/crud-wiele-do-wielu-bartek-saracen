@@ -4,6 +4,6 @@
 
     unset($_SESSION['login']);
 
-    header("Location: http://bartek-saracen-crud.herokuapp.com/");
+    // header("Location: index.php");
 
 ?>

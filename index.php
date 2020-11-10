@@ -1,4 +1,7 @@
-
+<?php
+    error_reporting( E_ALL );
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +14,18 @@
     <div class="modal">
         <div class="log">
             <a class="close">+</a>
-            <div class="a1 a">
+            <div class="a1">
                 <div class="circle"></div>
             </div>
-            <form action="login.php" method="POST">
-            <div class="a2 a">
-                <div class="action">
-                    <input type="text" name="login" class="login i" placeholder="login">
-                    <input type="text" name="password" class="password i" placeholder="password">
+            <div class="a2">
+                <div class="e1">
+                    <form action="login.php" method="POST">
+                    <div class="i ii"><input type="text" name="login" class="in" placeholder="login = admin"></div>
+                    <div class="i ii"><input type="text" name="password" class="in" placeholder="password = a"></div>
+                    <div class="i"><input class="button" class="button" type="submit" value="Zaloguj"></div>
+                    </form>
                 </div>
             </div>
-            <div class="a3 a">
-                <input class="button" type="submit" value="Zaloguj">
-            </div>
-            </form>
         </div>
     </div>
     <div class="container">
@@ -35,8 +36,14 @@
         <ul>
             <li><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-bartek-saracen" target="_blank"><img class="github" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111425.svg" alt="github"></a></li>
             <li><a href="cards/index.html">Cards</a></li>
-            <li><a href="#" id="signin">login</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <?php
+            if(isset($_SESSION['login'])){
+             echo("<li><a href='logout.php'>Logout</a></li>");
+            }
+            else{
+                echo("<li><div class='login' id='signin'>login</div></li>");
+            }
+            ?>
         </ul>
     </nav>
     <div class="left-aside">
