@@ -46,9 +46,7 @@
                 <p>Tabela na stronie jest połączeniem 3 tabel lib_autor, lib_tytul oraz lib_autor_tytul</p>
             </details>
         </div>
-        <?php
-        if(isset($_SESSION['login']) {
-        echo("
+       
         <div class='ins1'>
             <form action='insert.php' method='POST'>
             <div><input type='text' name='imie' placeholder='imie autora'></div>
@@ -57,9 +55,7 @@
             <div><input style='cursor: pointer;' type='submit' value='Send'></div>
             </form>
         </div>
-        ");
-        }
-        ?>
+       
     </div>
     <main>
     <?php
