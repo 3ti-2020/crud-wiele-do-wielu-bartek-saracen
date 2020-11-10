@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +16,17 @@
             <div class="a1 a">
                 <div class="circle"></div>
             </div>
+            <form action="login.php" method="POST">
             <div class="a2 a">
                 <div class="action">
-                    <input type="text" class="login i" placeholder="login">
-                    <input type="text" class="password i" placeholder="password">
+                    <input type="text" name="login" class="login i" placeholder="login">
+                    <input type="text" name="password" class="password i" placeholder="password">
                 </div>
             </div>
             <div class="a3 a">
-                <input class="button" type="button" value="Zaloguj">
+                <input class="button" type="submit" value="Zaloguj">
             </div>
+            </form>
         </div>
     </div>
     <div class="container">
@@ -32,7 +37,8 @@
         <ul>
             <li><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-bartek-saracen" target="_blank"><img class="github" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111425.svg" alt="github"></a></li>
             <li><a href="cards/index.html">Cards</a></li>
-            <li><a href="#" id="signin">sign in</a></li>
+            <li><a href="#" id="signin">login</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
     </nav>
     <div class="left-aside">
@@ -42,14 +48,20 @@
                 <p>Tabela na stronie jest połączeniem 3 tabel lib_autor, lib_tytul oraz lib_autor_tytul</p>
             </details>
         </div>
-        <div class="ins1">
-            <form action="insert.php" method="POST">
-            <div><input type="text" name="imie" placeholder="imie autora"></div>
-            <div><input type="text" name="nazwisko" placeholder="nazwisko autora"></div>
-            <div><input type="text" name="tytul" placeholder="tytul"></div>
-            <div><input style="cursor: pointer;" type="submit" value="Send"></div>
+        <?php
+        if(isset($_SESSION['login']) {
+        echo("
+        <div class='ins1'>
+            <form action='insert.php' method='POST'>
+            <div><input type='text' name='imie' placeholder='imie autora'></div>
+            <div><input type='text' name='nazwisko' placeholder='nazwisko autora'></div>
+            <div><input type='text' name='tytul' placeholder='tytul'></div>
+            <div><input style='cursor: pointer;' type='submit' value='Send'></div>
             </form>
         </div>
+        ");
+        }
+        ?>
     </div>
     <main>
     <?php
