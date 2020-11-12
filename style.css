@@ -124,17 +124,22 @@ footer {
 .tab,th,td {
     border: 1px solid black;
     border-collapse: collapse;
-    background: gold;
+    background: rgb(102, 102, 102);
     text-align: center;
 }
 
 .tab th {
-    background: rgb(242, 255, 61);
+    background:rgb(102, 102, 102);
     padding: 1rem;
 }
 
 .tab td {
     background: honeydew;
+}
+
+.deletebtn {
+    padding: 0.5rem;
+    font-size: 15px;
 }
 
 @media only screen and (max-width: 1150px) {

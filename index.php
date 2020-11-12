@@ -119,7 +119,7 @@ HTML;
             <input type="hidden" name="ia" value="$row[id_autor]">
             <input type="hidden" name="it" value="$row[id_tytul]">
             <input type="hidden" name="idat" value="$row[id_autor_tytul]">
-            <input type="submit" value="delete">
+            <input class="deletebtn" type="submit" value="delete">
             </form>
             </td>
         </tr>
