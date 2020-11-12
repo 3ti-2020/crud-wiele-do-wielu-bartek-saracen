@@ -137,6 +137,7 @@ HTML;
         echo("<table class='tab'><tr>
         <th>id</th>
         <th>autor</th>
+        <th>tytuł</th>
         <th>wypożyczający</th>
         <th>data wypożyczenia</th>
         <th>termin</th>
@@ -146,12 +147,13 @@ HTML;
         <tr>
             <td>$row[id_wyp]</td>
             <td>$row[autor]</td>
+            <td>$row[tytul]</td>
             <td>$row[wypozyczajacy]</td>
             <td>$row[data_wypozyczenia]</td>
             <td>$row[data_oddania]</td>
             <td>
             <form action="wypdelete.php" method="POST">
-            <input type="text" name="id_wyp" value="$row[id_wyp]">
+            <input type="hidden" name="id_wyp" value="$row[id_wyp]">
             <input type="submit" value="oddaj">
             </form>
             </td>
