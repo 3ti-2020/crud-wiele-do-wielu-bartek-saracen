@@ -82,7 +82,7 @@
        
     </div>
     <main>
-        <div>
+        <div class="tab1">
     <?php
     $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
     echo("<table class='tab'><tr>
@@ -106,7 +106,7 @@ HTML;
     echo("</table>");
     }
     if ( isset($_SESSION['admin']) && $_SESSION['admin']==1){
-        echo("<th>delete</th></tr>");
+        echo("<th></th></tr>");
     while($row=$result1->fetch_assoc()){
         $str = <<<HTML
         <tr>
@@ -130,7 +130,7 @@ HTML;
     }
     ?>
     </div>
-    <div>
+    <div class="tab2">
         <?php
         if( isset($_SESSION['admin']) && $_SESSION['admin']==1){
         $result2=$conn->query("SELECT w.id_wyp,CONCAT(la.imie_autor,' ',la.nazwisko_autor) as autor,lt.tytul,CONCAT(Imie_wyp,' ',Nazwisko_wyp) as wypozyczajacy,data_wypozyczenia,data_oddania FROM lib_autor la, lib_tytul lt,lib_autor_tytul lat,wypozyczenia w WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul and lat.id_autor_tytul=w.id_a_t");
@@ -154,7 +154,7 @@ HTML;
             <td>
             <form action="wypdelete.php" method="POST">
             <input type="hidden" name="id_wyp" value="$row[id_wyp]">
-            <input type="submit" value="oddaj">
+            <input class="oddaj" type="submit" value="oddaj">
             </form>
             </td>
         </tr>

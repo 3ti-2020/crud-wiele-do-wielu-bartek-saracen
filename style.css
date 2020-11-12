@@ -28,12 +28,15 @@ header {
     justify-content: center;
     align-items: center;
     border: 1px solid white;
+    font-size: large;
+    backdrop-filter: blur(3px);
 }
 
 nav {
     grid-area: b;
     display: flex;
     border: 1px solid white;
+    backdrop-filter: blur(10px);
 }
 
 nav ul {
@@ -137,11 +140,20 @@ footer {
     background: honeydew;
 }
 
-.deletebtn {
+.deletebtn,.oddaj {
     padding: 0.5rem;
     font-size: 15px;
 }
 
+.tab {
+    max-width: 800px;
+}
+
+@media only screen and (max-width: 1700px){
+    header {
+        color: white;
+    }
+}
 @media only screen and (max-width: 1150px) {
     .container {
         width: 100%;
@@ -151,14 +163,23 @@ footer {
         background-position: center;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 50px 60px 0.5fr 0.5fr 50px;
+        grid-template-rows: 50px 60px 0.7fr 1fr 50px;
         grid-template-areas: 
         "a"
         "b"
         "c"
         "d"
-        "e"
-        ;
+        "e";
+    }
+    .tab1 {
+        width: 380px;
+        height: 250px;
+        overflow: scroll;
+    }
+    .tab2 {
+        max-width: 700px;
+        height: 270px;
+        overflow: scroll;
     }
 }
 
@@ -170,6 +191,7 @@ footer {
     background: rgba( 0, 0, 0, 0.7);
     display: none;
     position: absolute;
+    z-index: 10;
 }
 .modal .log {
     margin: auto;
@@ -242,6 +264,9 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    .container {
+        overflow: scroll;
+    }
     .log {
         width: 90%;
     }
@@ -249,11 +274,20 @@ footer {
         width: 105px;
         height: 105px;
     }
+    .tab {
+        margin: 0;
+    }
+    .tab2 {
+        width: 380px;        
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .circle {
         width: 95px;
         height: 95px;
+    }
+    .tab1,.tab2 {
+        width: 260px;
     }
 }
