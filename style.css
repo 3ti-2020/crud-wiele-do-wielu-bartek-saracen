@@ -146,9 +146,6 @@ footer {
 }
 
 .tab1,.tab2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 850px;
     max-height: 300px;
     overflow: scroll;
