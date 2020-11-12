@@ -139,7 +139,8 @@ HTML;
         <th>autor</th>
         <th>wypożyczający</th>
         <th>data wypożyczenia</th>
-        <th>termin</th></tr>");
+        <th>termin</th>
+        <th></th></tr>");
     while($row=$result2->fetch_assoc()){
         $str = <<<HTML
         <tr>
@@ -148,7 +149,12 @@ HTML;
             <td>$row[wypozyczajacy]</td>
             <td>$row[data_wypozyczenia]</td>
             <td>$row[data_oddania]</td>
-
+            <td>
+            <form action="wypdelete.php" method="POST">
+            <input type="text" name="id_wyp" value="$row[id_wyp]">
+            <input type="submit" value="oddaj">
+            </form>
+            </td>
         </tr>
 HTML;
         echo $str;
