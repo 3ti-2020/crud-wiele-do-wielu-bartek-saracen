@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conn=new mysqli('remotemysql.com','j9t0rQSoKi','way44Ystk7','j9t0rQSoKi');
+    require_once("connect.php");
 
     $result=$conn->query("SELECT * FROM lib_users");
 

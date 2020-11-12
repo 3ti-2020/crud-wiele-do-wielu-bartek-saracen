@@ -81,16 +81,17 @@ nav ul li a:hover,.login:hover {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+    flex-wrap: wrap;
 }
 
 .left-aside details {
+    min-width: 280px;
     width: 300px;
     height: auto;
     background: whitesmoke;
 }
 
-.ins1 {
+.ins1,.ins2 {
     display: flex;
     flex-direction: column;
     width: auto;
@@ -100,9 +101,15 @@ nav ul li a:hover,.login:hover {
 main {
     grid-area: d;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     border: 1px solid white;
+}
+
+.margin div {
+    margin: 1rem;
 }
 
 .tab {
@@ -157,6 +164,7 @@ footer {
     height: 100vh;
     background: rgba( 0, 0, 0, 0.7);
     display: none;
+    position: absolute;
 }
 .modal .log {
     margin: auto;

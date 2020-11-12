@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once('connect.php');
+    $conn->set_charset('utf8');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +38,7 @@
             <li><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-bartek-saracen" target="_blank"><img class="github" src="https://www.flaticon.com/svg/static/icons/svg/2111/2111425.svg" alt="github"></a></li>
             <li><a href="cards/index.html">Cards</a></li>
             <?php
-            if ( isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1 && isset($_SESSION['admin']) && $_SESSION['admin']==1){
+            if ( isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1){
              echo("<li><a href='logout.php'>Logout</a></li>");
             }
             else{
@@ -53,7 +55,7 @@
             </details>
         </div>
        <?php
-       if ( isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1 && isset($_SESSION['admin']) && $_SESSION['admin']==1){
+       if ( isset($_SESSION['admin']) && $_SESSION['admin']==1){
         echo "<div class='ins1'>
             <form action='insert.php' method='POST'>
             <div><input type='text' name='imie' placeholder='imie autora'></div>
@@ -62,15 +64,27 @@
             <div><input style='cursor: pointer;' type='submit' value='Send'></div>
             </form>
         </div>";
+        echo("<div class='ins2'><form action='wypozyczenia.php' method='POST'>");
+        echo("<div><select name='id_autor_tytul'>");
+            $result=$conn->query("SELECT id_autor_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor_tytul lat,lib_autor la,lib_tytul lt WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul");
+            while($row=$result->fetch_assoc()){
+                echo("<option value='".$row['id_autor_tytul']."'>".$row['id_autor_tytul'].": ".$row['imie_autor']." ".$row['nazwisko_autor']." : ".$row['tytul']."</option>");
+            }
+        echo("</select></div>");
+        echo "
+        <div><input type='text' name='imie' placeholder='imie wypożyczającego'></div>
+        <div><input type='text' name='nazwisko' placeholder='nazwisko wypożyczającego'></div>
+        ";
+        echo("<div><input type='submit' value='wypożycz'></div>");
+        echo("</form></div>");
         }
        ?>
        
     </div>
     <main>
+        <div>
     <?php
-    require('connect.php');
-    $conn->set_charset('utf8');
-    $result=$conn->query("SELECT id_autor_tytul,lib_autor.id_autor as id_autor,lib_tytul.id_tytul as id_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor_tytul,lib_autor,lib_tytul WHERE lib_tytul.id_tytul=lib_autor_tytul.id_tytul and lib_autor.id_autor=lib_autor_tytul.id_autor");
+    $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
     echo("<table class='tab'><tr>
         <th>id</th>
         <th>imie</th>
@@ -78,7 +92,7 @@
         <th>tytul</th>");
     if(!isset($_SESSION['zalogowany'])){
     echo "</tr>";
-    while($row=$result->fetch_assoc()){
+    while($row=$result1->fetch_assoc()){
         $str = <<<HTML
         <tr>
             <td>$row[id_autor_tytul]</td>
@@ -91,9 +105,9 @@ HTML;
     }
     echo("</table>");
     }
-    if ( isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1 && isset($_SESSION['admin']) && $_SESSION['admin']==1){
+    if ( isset($_SESSION['admin']) && $_SESSION['admin']==1){
         echo("<th>delete</th></tr>");
-    while($row=$result->fetch_assoc()){
+    while($row=$result1->fetch_assoc()){
         $str = <<<HTML
         <tr>
             <td>$row[id_autor_tytul]</td>
@@ -114,8 +128,36 @@ HTML;
     }
     echo("</table>");
     }
-    mysqli_close($conn);
     ?>
+    </div>
+    <div>
+        <?php
+        if( isset($_SESSION['admin']) && $_SESSION['admin']==1){
+        $result2=$conn->query("SELECT w.id_wyp,CONCAT(la.imie_autor,' ',la.nazwisko_autor) as autor,lt.tytul,CONCAT(Imie_wyp,' ',Nazwisko_wyp) as wypozyczajacy,data_wypozyczenia,data_oddania FROM lib_autor la, lib_tytul lt,lib_autor_tytul lat,wypozyczenia w WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul and lat.id_autor_tytul=w.id_a_t");
+        echo("<table class='tab'><tr>
+        <th>id</th>
+        <th>autor</th>
+        <th>wypożyczający</th>
+        <th>data wypożyczenia</th>
+        <th>termin</th></tr>");
+    while($row=$result2->fetch_assoc()){
+        $str = <<<HTML
+        <tr>
+            <td>$row[id_wyp]</td>
+            <td>$row[autor]</td>
+            <td>$row[wypozyczajacy]</td>
+            <td>$row[data_wypozyczenia]</td>
+            <td>$row[data_oddania]</td>
+
+        </tr>
+HTML;
+        echo $str;
+    }
+    echo("</table>");
+}
+mysqli_close($conn);
+        ?>
+    </div>
     </main>
     <footer></footer>
     </div>

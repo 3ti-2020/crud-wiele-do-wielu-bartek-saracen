@@ -1,5 +1,5 @@
 <?php
-require('connect.php');
+require_once('connect.php');
 $imie = $_POST['imie'];
 $nazwisko = $_POST['nazwisko'];
 $tytul = $_POST['tytul'];
