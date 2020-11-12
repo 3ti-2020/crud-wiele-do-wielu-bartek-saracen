@@ -146,6 +146,9 @@ footer {
 }
 
 .tab1,.tab2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 850px;
     max-height: 300px;
     overflow: scroll;
@@ -174,14 +177,12 @@ footer {
         "e";
     }
     .tab1 {
-        width: 380px;
-        height: 200px;
-        overflow: scroll;
+        max-width: 380px;
+        max-height: 200px;
     }
     .tab2 {
         max-width: 700px;
-        height: 270px;
-        overflow: scroll;
+        max-height: 270px;
     }
 }
 

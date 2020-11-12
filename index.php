@@ -82,8 +82,8 @@
        
     </div>
     <main>
-        <div class="tab1">
     <?php
+    echo('<div class="tab1">');
     $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
     echo("<table class='tab'><tr>
         <th>id</th>
@@ -103,7 +103,7 @@
 HTML;
         echo $str;
     }
-    echo("</table>");
+    echo("</table></div>");
     }
     if ( isset($_SESSION['admin']) && $_SESSION['admin']==1){
         echo("<th></th></tr>");
@@ -126,13 +126,12 @@ HTML;
 HTML;
         echo $str;
     }
-    echo("</table>");
+    echo("</table></div>");
     }
     ?>
-    </div>
-    <div class="tab2">
         <?php
         if( isset($_SESSION['admin']) && $_SESSION['admin']==1){
+        echo("<div class='tab2'>");
         $result2=$conn->query("SELECT w.id_wyp,CONCAT(la.imie_autor,' ',la.nazwisko_autor) as autor,lt.tytul,CONCAT(Imie_wyp,' ',Nazwisko_wyp) as wypozyczajacy,data_wypozyczenia,data_oddania FROM lib_autor la, lib_tytul lt,lib_autor_tytul lat,wypozyczenia w WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul and lat.id_autor_tytul=w.id_a_t");
         echo("<table class='tab'><tr>
         <th>id</th>
@@ -161,11 +160,10 @@ HTML;
 HTML;
         echo $str;
     }
-    echo("</table>");
+    echo("</table></div>");
 }
 mysqli_close($conn);
         ?>
-    </div>
     </main>
     <footer></footer>
     </div>
