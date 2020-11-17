@@ -92,7 +92,7 @@
         <th>imie</th>
         <th>nazwisko</th>
         <th>tytul</th>");
-    if(!isset($_SESSION['zalogowany'])){
+    if(!isset($_SESSION['zalogowany']) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
     echo "</tr>";
     while($row=$result1->fetch_assoc()){
         $str = <<<HTML
