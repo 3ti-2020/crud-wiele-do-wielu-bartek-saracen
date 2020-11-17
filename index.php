@@ -64,6 +64,8 @@
             <div><input style='cursor: pointer;' type='submit' value='Send'></div>
             </form>
         </div>";
+       }
+        if( (isset($_SESSION['admin']) && $_SESSION['admin']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1) ){
         echo("<div class='ins2'><form action='wypozyczenia.php' method='POST'>");
         echo("<div><select name='id_autor_tytul'>");
             $result=$conn->query("SELECT id_autor_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor_tytul lat,lib_autor la,lib_tytul lt WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul");
@@ -130,7 +132,7 @@ HTML;
     }
     ?>
         <?php
-        if( isset($_SESSION['admin']) && $_SESSION['admin']==1){
+        if( (isset($_SESSION['admin']) && $_SESSION['admin']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
         echo("<div class='tab2'>");
         $result2=$conn->query("SELECT w.id_wyp,CONCAT(la.imie_autor,' ',la.nazwisko_autor) as autor,lt.tytul,CONCAT(Imie_wyp,' ',Nazwisko_wyp) as wypozyczajacy,data_wypozyczenia,data_oddania FROM lib_autor la, lib_tytul lt,lib_autor_tytul lat,wypozyczenia w WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul and lat.id_autor_tytul=w.id_a_t");
         echo("<table class='tab'><tr>
