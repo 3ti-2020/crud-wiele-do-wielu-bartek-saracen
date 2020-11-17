@@ -65,7 +65,7 @@
             </form>
         </div>";
        }
-        if( (isset($_SESSION['admin']) && $_SESSION['admin']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1) ){
+        if( (isset($_SESSION['admin']) && $_SESSION['admin']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
         echo("<div class='ins2'><form action='wypozyczenia.php' method='POST'>");
         echo("<div><select name='id_autor_tytul'>");
             $result=$conn->query("SELECT id_autor_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor_tytul lat,lib_autor la,lib_tytul lt WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul");
@@ -85,15 +85,14 @@
     </div>
     <main>
     <?php
-    echo('<div class="tab1">');
-    $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
-    echo("<table class='tab'><tr>
-        <th>id</th>
-        <th>imie</th>
-        <th>nazwisko</th>
-        <th>tytul</th>");
-    if(!isset($_SESSION['zalogowany']) || (isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
-    echo "</tr>";
+    if(!isset($_SESSION['zalogowany']) || (!isset($_SESSION['admin']) && isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
+        echo('<div class="tab1">');
+        $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
+        echo("<table class='tab'><tr>
+            <th>id</th>
+            <th>imie</th>
+            <th>nazwisko</th>
+            <th>tytul</th></tr>");
     while($row=$result1->fetch_assoc()){
         $str = <<<HTML
         <tr>
@@ -108,7 +107,14 @@ HTML;
     echo("</table></div>");
     }
     if ( isset($_SESSION['admin']) && $_SESSION['admin']==1){
-        echo("<th></th></tr>");
+        echo('<div class="tab1">');
+    $result1=$conn->query("SELECT lat.id_autor_tytul,la.id_autor as id_autor,lt.id_tytul as id_tytul,la.imie_autor,la.nazwisko_autor,lt.tytul FROM lib_autor_tytul lat ,lib_autor la ,lib_tytul lt WHERE lt.id_tytul=lat.id_tytul and la.id_autor=lat.id_autor");
+    echo("<table class='tab'><tr>
+        <th>id</th>
+        <th>imie</th>
+        <th>nazwisko</th>
+        <th>tytul</th>
+        <th></th></tr>");
     while($row=$result1->fetch_assoc()){
         $str = <<<HTML
         <tr>
@@ -130,8 +136,6 @@ HTML;
     }
     echo("</table></div>");
     }
-    ?>
-        <?php
         if( (isset($_SESSION['admin']) && $_SESSION['admin']==1) || (isset($_SESSION['editor']) && $_SESSION['editor']==1)){
         echo("<div class='tab2'>");
         $result2=$conn->query("SELECT w.id_wyp,CONCAT(la.imie_autor,' ',la.nazwisko_autor) as autor,lt.tytul,CONCAT(Imie_wyp,' ',Nazwisko_wyp) as wypozyczajacy,data_wypozyczenia,data_oddania FROM lib_autor la, lib_tytul lt,lib_autor_tytul lat,wypozyczenia w WHERE la.id_autor=lat.id_autor and lt.id_tytul=lat.id_tytul and lat.id_autor_tytul=w.id_a_t");
