@@ -1,8 +1,9 @@
-const modal = document.querySelector(".modal");
-const container = document.querySelector(".container");
-document.getElementById("signin").addEventListener('click',() => {
-    modal.style.display="flex";
+const loginbtn = document.querySelector('.log-in');
+const closebtn = document.querySelector('.close');
+
+loginbtn.addEventListener('click',()=>{
+    document.querySelector('.modallogbackground').style.display="flex";
 });
-document.querySelector(".close").addEventListener('click',() => {
-    modal.style.display="none";
+closebtn.addEventListener('click',()=>{
+    document.querySelector('.modallogbackground').style.display="none";
 });

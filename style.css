@@ -1,293 +1,254 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Consolas;
 }
 
 .container {
     width: 100%;
-    height: 100vh;
-    background-image: url(images/background.png);
-    background-size: cover;
-    background-position: center;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: 2.5fr 6fr;
-    grid-template-rows: 50px 60px 1fr 50px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 50px 70px 1fr;
     grid-template-areas: 
     "a a"
     "b b"
     "c d"
-    "e e"
     ;
-    overflow: hidden;
+    position: relative;
+    overflow: auto;
+}
+
+.github {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
 }
 
 header {
     grid-area: a;
+    background: brown;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid white;
-    font-size: large;
-    backdrop-filter: blur(3px);
+    position: relative;
 }
+
+header h1 {
+    margin: auto;
+}
+
 
 nav {
     grid-area: b;
+    background: darkgoldenrod;
     display: flex;
-    border: 1px solid white;
-    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
     width: 100%;
     height: 100%;
-    list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    list-style-type: none;
 }
 
 nav ul li {
-    background: transparent;
-    border: 2px solid white;
-    display: flex;
+    margin: 0 15px;
 }
 
-nav ul li a,.login {
-    color: white;
+nav ul li a {
+    display: block;
+    text-decoration: none;
     width: 70px;
     height: 40px;
+    background: red;
     line-height: 40px;
     text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
+    color: black;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: 2px;
+    transition: 0.5s;
 }
 
-nav ul li a:hover,.login:hover {
-    transition: 0.8s;
-    filter: brightness(80%);
+nav ul li a span {
+    position: absolute;
+    background: rgb(0, 0, 0);
 }
 
-.github {
-    background: white;
-    width: 70px;
-    height: 40px;
+nav ul li a span:nth-child(1){
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.5s;
 }
-
-.left-aside {
+nav ul li a:hover span:nth-child(1){
+    transform-origin: bottom;
+    transform: scaleY(1);
+    transition: transform 0.5s;
+}
+nav ul li a span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+nav ul li a:hover span:nth-child(2){
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s;
+}
+nav ul li a span:nth-child(3){
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+nav ul li a:hover span:nth-child(3){
+    transform-origin: bottom;
+    transform: scaleY(1);
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+nav ul li a span:nth-child(4){
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+nav ul li a:hover span:nth-child(4){
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+.left {
     grid-area: c;
-    border: 1px solid white;
+    background: chocolate;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-}
-
-.left-aside details {
-    min-width: 280px;
-    width: 300px;
-    height: auto;
-    background: whitesmoke;
-}
-
-.ins1,.ins2 {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
 }
 
 main {
     grid-area: d;
+    background: crimson;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-    border: 1px solid white;
 }
 
-.margin div {
-    margin: 1rem;
-}
-
-.tab1,.tab2 {
-    margin: 1rem;
-}
-
-footer {
-    grid-area: e;
-    border: 1px solid white;
-}
-
-.tab,th,td {
-    border: 1px solid black;
+.tab1,.tab1 th,.tab1 td {
     border-collapse: collapse;
-    background: rgb(102, 102, 102);
-    text-align: center;
+    border: 1px solid black;
+    text-align: center;s
 }
 
-.tab th {
-    background:rgb(102, 102, 102);
-    padding: 1rem;
+.tab1 td {
+    background: yellowgreen;
 }
 
-.tab td {
-    background: honeydew;
+.tab1 th,.id {
+    padding: 0.1rem;
+    background: rgb(223, 223, 46);
 }
 
-.deletebtn,.oddaj {
-    padding: 0.5rem;
-    font-size: 15px;
-}
 
-.tab1,.tab2 {
-    max-width: 850px;
-    max-height: 300px;
-    overflow: scroll;
-}
+/* --------------------------logowanie------------------------------ */
 
-@media only screen and (max-width: 1700px){
-    header {
-        color: white;
-    }
-}
-@media only screen and (max-width: 1150px) {
-    .container {
-        width: 100%;
-        height: 100vh;
-        background-image: url(images/background.png);
-        background-size: cover;
-        background-position: center;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 60px 0.7fr 1fr 50px;
-        grid-template-areas: 
-        "a"
-        "b"
-        "c"
-        "d"
-        "e";
-    }
-    .tab1 {
-        max-width: 380px;
-        max-height: 200px;
-    }
-    .tab2 {
-        max-width: 700px;
-        max-height: 270px;
-    }
-}
-
-/*<-------------------- logowanie -------------------->*/
-
-.modal {
-    width: 100vw;
-    height: 100vh;
-    background: rgba( 0, 0, 0, 0.7);
+.modallogbackground {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
     display: none;
     position: absolute;
-    z-index: 10;
+    background: rgba(0,0,0,0.3);
 }
-.modal .log {
+
+.modallog {
     margin: auto;
-    height: 40%;
-    min-width: 200px;
-    width: 500px;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
+    min-width: 280px;
+    width: 500px;
+    min-width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    transition: 0.5s;
+}
+
+.logform {
+    width: 100%;
+    height: 100%;
+}
+
+.modallog .a {
+    width: 100%;
+    display: flex;
+}
+
+.modallog .a1 {
+    height: 10%;
     position: relative;
 }
+
 .close {
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 5px;
+    text-decoration: none;
     font-size: 30px;
-    font-weight: 900;
-    transform: rotate(45deg);
-}
-.log .a1 {
-    height: 40%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.circle {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    background: cornflowerblue;
-    transition: 0.3s;
-}
-.log .a2 {
-    height: 60%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.log .a2 .e1 {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.log .a2 .e1 .i {
-    width: 100%;
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35px;
     height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
 }
 
-.ii {
-    margin-bottom: 20px;
+.modallog .a2 {
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
-.in {
-    border-radius: 5px;
-    border: 2px solid rgb(0, 223, 0);
-    padding: 0.5rem;
+
+.modallog .a2 div {
+    margin: 7px 0;
 }
-.button {
+.modallog .a3 {
+    height: 40%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modallog .a3 input {
     width: 70px;
     height: 40px;
-}
-
-@media only screen and (max-width: 600px) {
-    .container {
-        overflow: scroll;
-    }
-    .log {
-        width: 90%;
-    }
-    .circle {
-        width: 105px;
-        height: 105px;
-    }
-    .tab {
-        margin: 0;
-    }
-    .tab2 {
-        width: 380px;        
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .circle {
-        width: 95px;
-        height: 95px;
-    }
-    .tab1,.tab2 {
-        width: 260px;
-    }
+    font-weight: 30px;
 }
