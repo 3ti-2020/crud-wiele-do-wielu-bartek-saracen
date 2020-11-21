@@ -57,7 +57,7 @@
                         Log In</a></li>');
                     }
                     else {
-                        echo('<li><a class="log-in" href="wylogowanie.php">
+                        echo('<li><a href="wylogowanie.php">
                         <span></span>
                         <span></span>
                         <span></span>
