@@ -67,8 +67,8 @@
                     ?>
             </ul>
         </nav>
-        <div class="left">
             <?php
+        echo'<div class="left">';
                 if(isset($_SESSION['admin'])&&($_SESSION['admin']==1)){
                     echo('<div>
                         <form action="dodajuzytkownika.php" method="post">
@@ -79,56 +79,51 @@
                             <div><input type="password" name="haslouzy" placeholder="hasło"></div>
                             <div><input type="submit" value="dodaj"></div>
                         </form>
-                    </div>');
-                }
-                if(isset($_SESSION['admin'])&&($_SESSION['admin']==1)){
-                    echo('<div>
+                    </div>
+                    <div>
                     <form action="dadajksiazke.php" method="post">
                     <div><input type="text" name="imieautora" placeholder="imie autora"></div>
                     <div><input type="text" name="nazwiskoautora" placeholder="nazwisko autora"></div>
                     <div><input type="text" name="tytul" placeholder="tytuł"></div>');
                     if(isset($_SESSION['autortytul'])) echo "<div>".$_SESSION['autortytul']."</div>";
                     echo('<div><input type="submit" value="dodaj"></div>
+                    </form></div>');
+                    echo "<div>
+                    <form action='wyporzycksiazke.php' method='POST'>";
+                    $sql1="SELECT * FROM users WHERE id!=1 ";
+                    $sql2="SELECT la.id as id_autor, lt.id as id_tytul,imie_autor,nazwisko_autor,tytul,lat.id as id_autor_tytul FROM lib_autor la,lib_tytul lt,lib_autor_tytul lat WHERE  la.id=lat.id_autor AND lt.id=lat.id_tytul";
+                    $result1=$conn->query($sql1);
+                    $result2=$conn->query($sql2);
+                    echo"<div><select name='iduser'>";
+                    while($row=$result1->fetch_assoc()){
+                        echo "<option value='".$row['id']."'>".$row['imie']." ".$row['nazwisko']."</option>";
+                    }
+                    echo "</select></div>";
+                    echo"<div><select name='idksiazka'>";
+                    while($row=$result2->fetch_assoc()){
+                        echo "<option value='".$row['id_autor_tytul']."'>".$row['imie_autor']." ".$row['nazwisko_autor'].": ".$row['tytul']."</option>";
+                    }
+                    echo "</select></div>
+                    <div><input type='date' name='data_oddania'></div>
+                    <div><input type='submit' value='wypożycz'></div>
                     </form>
-                    </div>');
+                    </div>";
                 }
-            if(isset($_SESSION['admin'])&&$_SESSION['admin']==1){
-            echo "<div>
-            <form action='wyporzycksiazke.php' method='POST'>";
-            $sql1="SELECT * FROM users WHERE id!=1 ";
-            $sql2="SELECT la.id as id_autor, lt.id as id_tytul,imie_autor,nazwisko_autor,tytul,lat.id as id_autor_tytul FROM lib_autor la,lib_tytul lt,lib_autor_tytul lat WHERE  la.id=lat.id_autor AND lt.id=lat.id_tytul";
-            $result1=$conn->query($sql1);
-            $result2=$conn->query($sql2);
-            echo"<div><select name='iduser'>";
-            while($row=$result1->fetch_assoc()){
-                echo "<option value='".$row['id']."'>".$row['imie']." ".$row['nazwisko']."</option>";
-            }
-            echo "</select></div>";
-            echo"<div><select name='idksiazka'>";
-            while($row=$result2->fetch_assoc()){
-                echo "<option value='".$row['id_autor_tytul']."'>".$row['imie_autor']." ".$row['nazwisko_autor'].": ".$row['tytul']."</option>";
-            }
-            echo "</select></div>
-            <div><input type='date' name='data_oddania'></div>
-            <div><input type='submit' value='wypożycz'></div>
-            </form>
-            </div>";
-        }
-        else if(isset($_SESSION['user'])&&$_SESSION['user']==1){
-            echo "<div>
-            <form action='wyporzycksiazkeuser.php' method='POST'>";
-            $sql2="SELECT la.id as id_autor, lt.id as id_tytul,imie_autor,nazwisko_autor,tytul,lat.id as id_autor_tytul FROM lib_autor la,lib_tytul lt,lib_autor_tytul lat WHERE  la.id=lat.id_autor AND lt.id=lat.id_tytul";
-            $result2=$conn->query($sql2);
-            echo"<div><select name='idksiazka'>";
-            while($row=$result2->fetch_assoc()){
-                echo "<option value='".$row['id_autor_tytul']."'>".$row['imie_autor']." ".$row['nazwisko_autor'].": ".$row['tytul']."</option>";
-            }
-            echo "</select></div>
-            <div><input type='date' name='data_oddania'></div>
-            <div><input type='submit' value='wypożycz'></div>
-            </form>
-            </div>";
-        }
+                else if(isset($_SESSION['user'])&&$_SESSION['user']==1){
+                    echo "<div>
+                    <form action='wyporzycksiazkeuser.php' method='POST'>";
+                    $sql2="SELECT la.id as id_autor, lt.id as id_tytul,imie_autor,nazwisko_autor,tytul,lat.id as id_autor_tytul FROM lib_autor la,lib_tytul lt,lib_autor_tytul lat WHERE  la.id=lat.id_autor AND lt.id=lat.id_tytul";
+                    $result2=$conn->query($sql2);
+                    echo"<div><select name='idksiazka'>";
+                    while($row=$result2->fetch_assoc()){
+                        echo "<option value='".$row['id_autor_tytul']."'>".$row['imie_autor']." ".$row['nazwisko_autor'].": ".$row['tytul']."</option>";
+                    }
+                    echo "</select></div>
+                    <div><input type='date' name='data_oddania'></div>
+                    <div><input type='submit' value='wypożycz'></div>
+                    </form>
+                    </div>";
+                }
             if(!isset($_SESSION['zalogowany'])){
                 echo "
                     <div>
@@ -136,21 +131,13 @@
                 $result=$conn->query("SELECT nick,password FROM users");
                 while($row=$result->fetch_assoc()){
                     echo <<<HTML
-                    <ul>
-                    <li>$row[nick] : $row[password]</li>
-                    </ul>
+                    <ul><li>$row[nick] : $row[password]</li></ul>
 HTML;
                 }
-                echo" </div>
-                ";
+                echo "</div>";
             }
-
-            ?>
-        </div>
-        <main>
-
-        <?php
-        echo '<div>';
+        echo '</div>
+        <main><div>';
         $sql="SELECT lat.id as id_lat,lt.id as id_tytul,imie_autor,nazwisko_autor,tytul FROM lib_autor la,lib_tytul lt,lib_autor_tytul lat WHERE la.id=lat.id_autor AND lt.id=lat.id_tytul ORDER BY id_lat";
         $result=$conn->query($sql);
         echo '<table class="tab1"><tr>
@@ -193,9 +180,7 @@ HTML;
                         <input type="submit" value="oddaj" style="padding:0.2rem;">
                     </form>';
             }
-            echo'</td></tr>';
-            echo '</table>';
-            echo '</div>';
+            echo'</td></tr></table></div>';
         }
         else if(isset($_SESSION['user'])&&$_SESSION['user']==1&&!isset($_SESSION['admin'])){
             echo '<div>';
@@ -217,20 +202,13 @@ HTML;
                             <input type="submit" value="oddaj" style="padding:0.2rem;">
                         </form>';
                 }
-                echo'</td></tr>';
-                echo '</table>';
-                echo '</div>';
+                echo'</td></tr></table></div>';
         }
+        echo '</main></div>';
+        if(isset($_SESSION['bladuzytkownik'])) unset($_SESSION['bladuzytkownik']);
+        if(isset($_SESSION['autortytul'])) unset($_SESSION['autortytul']);
+        mysqli_close($conn);
         ?>
-
-        </main>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
-<?php
-if(isset($_SESSION['bladuzytkownik'])) unset($_SESSION['bladuzytkownik']);
-if(isset($_SESSION['autortytul'])) unset($_SESSION['autortytul']);
-if(isset($_SESSION['bladlogowania'])) unset($_SESSION['bladlogowania']);
-mysqli_close($conn);
-?>
