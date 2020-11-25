@@ -65,6 +65,12 @@
                         LogOut</a></li>');
                     }
                     ?>
+                    <li><a href="todolist.php">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    ToDoL</a></li>
             </ul>
         </nav>
             <?php
@@ -174,7 +180,7 @@ HTML;
         <th>data oddania</th>
         </tr>';
         while($row=$result->fetch_assoc()){
-            echo '<tr><td class="id">'.$row['id_wyp'].'</td><td>'.$row['imie_nazwisko_autor'].'</td><td>'.$row['tytul'].'</td><td>'.$row['imie_nazwisko_user'].'</td><td>'.$row['data_wypozyczenia'].'</td><td>'.$row['data_oddania'].'</td><td>';
+            echo '<tr><td class="id">'.$row['id_wyp'].'</td><td>'.$row['imie_nazwisko_autor'].'</td><td>'.$row['tytul'].'</td><td>'.$row['imie_nazwisko_user'].'</td><td class="datawyp">'.$row['data_wypozyczenia'].'</td><td class="dataodd">'.$row['data_oddania'].'</td><td>';
                 echo'<form action="oddawanieksiazek.php" method="POST">
                         <input type="hidden" name="id_wyp" value="'.$row['id_wyp'].'">
                         <input type="submit" value="oddaj" style="padding:0.2rem;">
@@ -196,7 +202,7 @@ HTML;
             <th>data oddania</th>
             </tr>';
             while($row=$result->fetch_assoc()){
-                echo '<tr><td class="id">'.$row['id_wyp'].'</td><td>'.$row['imie_nazwisko_autor'].'</td><td>'.$row['tytul'].'</td><td>'.$row['data_wypozyczenia'].'</td><td>'.$row['data_oddania'].'</td><td>';
+                echo '<tr><td class="id">'.$row['id_wyp'].'</td><td>'.$row['imie_nazwisko_autor'].'</td><td>'.$row['tytul'].'</td><td class="datawyp">'.$row['data_wypozyczenia'].'</td><td class="dataodd">'.$row['data_oddania'].'</td><td>';
                     echo'<form action="oddawanieksiazek.php" method="POST">
                             <input type="hidden" name="id_wyp" value="'.$row['id_wyp'].'">
                             <input type="submit" value="oddaj" style="padding:0.2rem;">
