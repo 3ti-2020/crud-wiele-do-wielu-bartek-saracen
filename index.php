@@ -65,7 +65,7 @@
                         LogOut</a></li>');
                     }
                     ?>
-                    <li><a href="todolist.php">
+                    <li><a href="todolist.html">
                     <span></span>
                     <span></span>
                     <span></span>
