@@ -47,9 +47,21 @@
                     <span></span>
                     <span></span>
                     Cards</a></li>
+                    <li><a href="todolist.html">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    ToDoL</a></li>
+                    <li><a href="egzamin.html">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    egzamin</a></li>
                     <?php
                     if(!isset($_SESSION['zalogowany'])){
-                    echo('<li><a class="log-in" style="cursor:pointer;">
+                        echo('<li><a class="log-in" style="cursor:pointer;">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -65,12 +77,6 @@
                         LogOut</a></li>');
                     }
                     ?>
-                    <li><a href="todolist.html">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    ToDoL</a></li>
             </ul>
         </nav>
             <?php

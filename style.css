@@ -40,12 +40,13 @@ header h1 {
 }
 
 
-nav {
+.container nav {
     grid-area: b;
     background: darkgoldenrod;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav ul {
@@ -64,7 +65,7 @@ nav ul li {
 nav ul li a {
     display: block;
     text-decoration: none;
-    width: 70px;
+    width: 75px;
     height: 40px;
     background: red;
     line-height: 40px;
@@ -141,7 +142,7 @@ nav ul li a:hover span:nth-child(4){
     transition: transform 0.5s;
     transition-delay: 0.5s;
 }
-.left {
+.container .left {
     grid-area: c;
     background: chocolate;
     display: flex;
@@ -150,7 +151,7 @@ nav ul li a:hover span:nth-child(4){
     align-items: center;
 }
 
-main {
+.container main {
     grid-area: d;
     background: crimson;
     display: flex;
@@ -253,11 +254,129 @@ main {
     font-weight: 30px;
 }
 
-.todo {
+/*-------------------------to do list--------------------------*/
+
+.containerList {
     width: 100%;
-    height: 100vh;
-    background: coral;
+    min-height: 100vh;
+    display: grid;
+    grid-template: 0.5fr 9.5fr/1fr;
+    grid-template-areas: 
+    "a"
+    "b"
+    ;
+}
+
+.containerList nav {
+    grid-area: a;
+    background: rgb(155, 60, 60);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.containerList nav a {
+    text-decoration: none;
+    font-family: consolas;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    color: black;
+    background: rgb(71, 122, 232);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.containerList nav a:hover {
+    background: rgb(255, 234, 77);
+}
+
+.containerList main {
+    grid-area: b;
+    background: rgb(223, 223, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#toDoContainer {
+    background: chocolate;
+    display: flex;
+    flex-direction: column;
+}
+
+.taskContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.taskContainer:hover {
+    background: rgb(213, 133, 77);
+}
+
+/*----------------------egzaminy-------------------------*/
+
+.containeregzamin {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template: 0.5fr 9.5fr/1fr;
+    grid-template-areas: 
+    "a"
+    "b"
+    ;
+}
+
+.containeregzamin nav {
+    grid-area: a;
+    background: rgb(155, 60, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containeregzamin nav a {
+    text-decoration: none;
+    font-family: consolas;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    color: black;
+    background: rgb(71, 122, 232);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.containeregzamin nav a:hover {
+    background: rgb(255, 234, 77);
+}
+
+.containeregzamin main {
+    grid-area: b;
+    background: rgb(223, 223, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.question {
+    padding: 2rem;
+}
+
+.question_details {
+    cursor: pointer;
+}
+
+.pytanie {
+    background: cornflowerblue;
+    width: 80%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.pytanie:nth-child(6) {
+    margin-bottom: 20px;
 }
