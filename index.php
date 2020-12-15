@@ -59,6 +59,12 @@
                     <span></span>
                     <span></span>
                     egzamin</a></li>
+                    <li><a href="blog/index.php">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    blog</a></li>
                     <?php
                     if(!isset($_SESSION['zalogowany'])){
                         echo('<li><a class="log-in" style="cursor:pointer;">

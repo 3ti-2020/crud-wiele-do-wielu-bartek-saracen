@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "a"
+    "b"
+    ;
+}
+
+nav {
+    grid-area: a;
+    background: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    padding: 0.6rem 1rem;
+    background: cornsilk;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    background: burlywood;
+}
+
+main {
+    grid-area: b;
+    background: rgb(175, 139, 139);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.POST {
+    width: 80%;
+    min-height: 200px;
+    background: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    border-radius: 15px;
+}
+
+.POST div:nth-child(2) {
+    background: cornsilk;
+    width: 85%;
+    min-height: 80px;
+    border-radius: 15px;
+}
+
+.p__post {
+    text-align: center;
+}
