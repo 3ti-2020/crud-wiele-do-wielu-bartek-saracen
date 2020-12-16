@@ -55,11 +55,26 @@ main {
     border-radius: 15px;
 }
 
-.POST p::selection, .POST h1::selection {
+.POST div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.POST p::selection, .POST h1::selection, .tag::selection {
     background: coral;
 }
 
-.POST div:nth-child(2) {
+.tags {
+    margin-bottom: 10px;
+}
+
+.tag {
+    color: white;
+    text-transform: uppercase;
+    margin-right: 2px;
+}
+
+.posts {
     background: cornsilk;
     width: 85%;
     min-height: 80px;
@@ -70,10 +85,5 @@ main {
     text-align: center;
     width: 100%;
     height: 100%;
-}
-
-.tag {
-    color: white;
-    text-transform: uppercase;
-    margin-right: 2px;
+    margin-bottom: 10px;
 }
