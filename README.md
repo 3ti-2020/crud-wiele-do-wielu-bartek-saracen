@@ -1,4 +1,6 @@
 # crud-wiele-do-wielu-bartek-saracen
 crud-wiele-do-wielu-bartek-saracen created by GitHub Classroom
 
-http://bartek-saracen-crud.herokuapp.com/
+strona: http://bartek-saracen-crud.herokuapp.com/
+
+blog: http://bartek-saracen-crud.herokuapp.com/blog/index.php
