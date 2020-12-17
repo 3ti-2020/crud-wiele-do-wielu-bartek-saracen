@@ -11,6 +11,9 @@
 </head>
 <body>
     <div class="container">
+    <header>
+        <h1>BLOG</h1>
+    </header>
         <nav>
             <a href="../index.php">powrót</a>
         </nav>
